@@ -15,6 +15,7 @@
 		9BE0B1CB2104071200AF61C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BE0B1C92104071200AF61C6 /* LaunchScreen.storyboard */; };
 		9BF847712104293C00C8CB2D /* FourSquareServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF847702104293C00C8CB2D /* FourSquareServiceManager.swift */; };
 		9BF847732104407F00C8CB2D /* VenueDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF847722104407F00C8CB2D /* VenueDetailViewController.swift */; };
+		9BFF44BE219873420040F18B /* FourSquareVenue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFF44BD219873420040F18B /* FourSquareVenue.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		9BE0B1CC2104071200AF61C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9BF847702104293C00C8CB2D /* FourSquareServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourSquareServiceManager.swift; sourceTree = "<group>"; };
 		9BF847722104407F00C8CB2D /* VenueDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueDetailViewController.swift; sourceTree = "<group>"; };
+		9BFF44BD219873420040F18B /* FourSquareVenue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourSquareVenue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,16 +84,57 @@
 		9BE0B1BF2104071100AF61C6 /* FourSquareTester */ = {
 			isa = PBXGroup;
 			children = (
-				9BE0B1C02104071100AF61C6 /* AppDelegate.swift */,
-				9BE0B1C22104071100AF61C6 /* ViewController.swift */,
-				9BF847702104293C00C8CB2D /* FourSquareServiceManager.swift */,
-				9BE0B1C42104071100AF61C6 /* Main.storyboard */,
-				9BE0B1C72104071200AF61C6 /* Assets.xcassets */,
-				9BE0B1C92104071200AF61C6 /* LaunchScreen.storyboard */,
-				9BE0B1CC2104071200AF61C6 /* Info.plist */,
-				9BF847722104407F00C8CB2D /* VenueDetailViewController.swift */,
+				9BFF44C32199BECC0040F18B /* Helpers */,
+				9BFF44C22199BEB30040F18B /* ViewControllers */,
+				9BFF44C12199BE910040F18B /* ServiceManagers */,
+				9BFF44C02199BE6B0040F18B /* Model */,
+				9BFF44BF2199BE580040F18B /* Views */,
 			);
 			path = FourSquareTester;
+			sourceTree = "<group>";
+		};
+		9BFF44BF2199BE580040F18B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9BE0B1C92104071200AF61C6 /* LaunchScreen.storyboard */,
+				9BE0B1C42104071100AF61C6 /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9BFF44C02199BE6B0040F18B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9BFF44BD219873420040F18B /* FourSquareVenue.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9BFF44C12199BE910040F18B /* ServiceManagers */ = {
+			isa = PBXGroup;
+			children = (
+				9BF847702104293C00C8CB2D /* FourSquareServiceManager.swift */,
+			);
+			path = ServiceManagers;
+			sourceTree = "<group>";
+		};
+		9BFF44C22199BEB30040F18B /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				9BE0B1C22104071100AF61C6 /* ViewController.swift */,
+				9BF847722104407F00C8CB2D /* VenueDetailViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		9BFF44C32199BECC0040F18B /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				9BE0B1C02104071100AF61C6 /* AppDelegate.swift */,
+				9BE0B1C72104071200AF61C6 /* Assets.xcassets */,
+				9BE0B1CC2104071200AF61C6 /* Info.plist */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,6 +254,7 @@
 				9BF847712104293C00C8CB2D /* FourSquareServiceManager.swift in Sources */,
 				9BE0B1C32104071100AF61C6 /* ViewController.swift in Sources */,
 				9BE0B1C12104071100AF61C6 /* AppDelegate.swift in Sources */,
+				9BFF44BE219873420040F18B /* FourSquareVenue.swift in Sources */,
 				9BF847732104407F00C8CB2D /* VenueDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -358,7 +402,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JKRH3LZ9VC;
-				INFOPLIST_FILE = FourSquareTester/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/FourSquareTester/Helpers/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -377,7 +421,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JKRH3LZ9VC;
-				INFOPLIST_FILE = FourSquareTester/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/FourSquareTester/Helpers/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

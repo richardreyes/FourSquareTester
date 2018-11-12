@@ -11,13 +11,6 @@ import MapKit
 import Alamofire
 import SwiftyJSON
 
-struct FourSquareVenue {
-    // structure definition goes here
-    var name = ""
-    var formattedAddress = ""
-    var distanceInMtrs:Int = 0
-}
-
 class FourSquareServiceManager {
     static let shared = FourSquareServiceManager()
     
@@ -41,38 +34,18 @@ class FourSquareServiceManager {
         Alamofire.request(API_SEARCH_URL,
                           method: .get,
                           parameters: parameters).responseJSON { response in
-                            
                 if let alReponseValue = response.result.value {
                     let sjr = JSON(alReponseValue)
                     if let venues = sjr["response"]["venues"].arrayObject {
-                        
                         //Now you got your value
                         for venue in venues {
                             if let place = venue as? [String: Any] {
-                                
-                                var fsv = FourSquareVenue()
-                                
-                                if let placeName = place["name"] as? String {
-                                    fsv.name = placeName
-                                }
-                                
-                                if let location = place["location"] as? [String: Any] {
-                                    if let distanceInMeters = location["distance"] as? Int {
-                                        fsv.distanceInMtrs = distanceInMeters
-                                    }
-                                    
-                                    if let formattedAddressArray = location["formattedAddress"] as? [String] {
-                                        let formattedAddress = formattedAddressArray.joined(separator: ", ")
-                                        fsv.formattedAddress = formattedAddress
-                                    }
-                                }
-                                venuesFC.append(fsv)
+                                venuesFC.append(FourSquareVenue(place))
                             }
                         }
                         venuesFC = venuesFC.sorted(by: { $0.distanceInMtrs < $1.distanceInMtrs })
                     }
                 }
-                
                 completionHandler(venuesFC)
         }
     }
