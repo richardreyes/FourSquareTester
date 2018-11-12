@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		8724604C7E37B760C18A2F41 /* Pods_FourSquareTester.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FEFE48BBDCAD720872E08CB /* Pods_FourSquareTester.framework */; };
+		9B9E8CFF2199C4A80040960F /* Configs.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9B9E8CFE2199C4A80040960F /* Configs.plist */; };
+		9B9E8D012199C56B0040960F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9E8D002199C56B0040960F /* Extensions.swift */; };
 		9BE0B1C12104071100AF61C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE0B1C02104071100AF61C6 /* AppDelegate.swift */; };
 		9BE0B1C32104071100AF61C6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE0B1C22104071100AF61C6 /* ViewController.swift */; };
 		9BE0B1C62104071100AF61C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BE0B1C42104071100AF61C6 /* Main.storyboard */; };
@@ -22,6 +24,8 @@
 		2D1B6596FCD40C8D98B5CD76 /* Pods-FourSquareTester.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FourSquareTester.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FourSquareTester/Pods-FourSquareTester.debug.xcconfig"; sourceTree = "<group>"; };
 		42354AF5BB34A14AE9E5515E /* Pods-FourSquareTester.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FourSquareTester.release.xcconfig"; path = "Pods/Target Support Files/Pods-FourSquareTester/Pods-FourSquareTester.release.xcconfig"; sourceTree = "<group>"; };
 		8FEFE48BBDCAD720872E08CB /* Pods_FourSquareTester.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FourSquareTester.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B9E8CFE2199C4A80040960F /* Configs.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Configs.plist; sourceTree = "<group>"; };
+		9B9E8D002199C56B0040960F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		9BE0B1BD2104071100AF61C6 /* FourSquareTester.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FourSquareTester.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BE0B1C02104071100AF61C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9BE0B1C22104071100AF61C6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -133,6 +137,8 @@
 				9BE0B1C02104071100AF61C6 /* AppDelegate.swift */,
 				9BE0B1C72104071200AF61C6 /* Assets.xcassets */,
 				9BE0B1CC2104071200AF61C6 /* Info.plist */,
+				9B9E8CFE2199C4A80040960F /* Configs.plist */,
+				9B9E8D002199C56B0040960F /* Extensions.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -197,6 +203,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B9E8CFF2199C4A80040960F /* Configs.plist in Resources */,
 				9BE0B1CB2104071200AF61C6 /* LaunchScreen.storyboard in Resources */,
 				9BE0B1C82104071200AF61C6 /* Assets.xcassets in Resources */,
 				9BE0B1C62104071100AF61C6 /* Main.storyboard in Resources */,
@@ -232,11 +239,13 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-FourSquareTester/Pods-FourSquareTester-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyConfiguration/SwiftyConfiguration.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyConfiguration.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -252,6 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9BF847712104293C00C8CB2D /* FourSquareServiceManager.swift in Sources */,
+				9B9E8D012199C56B0040960F /* Extensions.swift in Sources */,
 				9BE0B1C32104071100AF61C6 /* ViewController.swift in Sources */,
 				9BE0B1C12104071100AF61C6 /* AppDelegate.swift in Sources */,
 				9BFF44BE219873420040F18B /* FourSquareVenue.swift in Sources */,

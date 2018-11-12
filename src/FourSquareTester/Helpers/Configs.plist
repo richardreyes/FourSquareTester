@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>4SQUARE_API_VERSION</key>
+	<string>20180323</string>
+	<key>4SQUARE_CLIENT_SECRET</key>
+	<string>WG1JDU43TOG2O0VIWIQK0GHXBTPQ22UCGR0M0X2QMZ1DRTP4</string>
+	<key>4SQUARE_CLIENT_ID</key>
+	<string>ELS0QT1F4DR3E03WSJNJJMI21XAGSNRRFWQTESTLZDZGY40U</string>
+</dict>
+</plist>

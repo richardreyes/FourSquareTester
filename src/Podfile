@@ -8,4 +8,5 @@ target 'FourSquareTester' do
   # Pods for FourSquareTester
   pod 'Alamofire'
   pod 'SwiftyJSON'
+  pod 'SwiftyConfiguration'
 end

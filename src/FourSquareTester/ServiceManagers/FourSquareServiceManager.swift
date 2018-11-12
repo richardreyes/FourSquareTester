@@ -10,26 +10,36 @@ import Foundation
 import MapKit
 import Alamofire
 import SwiftyJSON
+import SwiftyConfiguration
 
 class FourSquareServiceManager {
     static let shared = FourSquareServiceManager()
     
-    private let CLIENT_ID:String = "ELS0QT1F4DR3E03WSJNJJMI21XAGSNRRFWQTESTLZDZGY40U"
-    private let CLIENT_SECRET:String = "WG1JDU43TOG2O0VIWIQK0GHXBTPQ22UCGR0M0X2QMZ1DRTP4"
-    private let API_VERSION:String = "20180323"
-    
     private let API_SEARCH_URL:String = "https://api.foursquare.com/v2/venues/search"
+    
+    lazy var config: Configuration? = {
+        let plistPath = Bundle.main.path(forResource: "Configs", ofType: "plist")!
+        if let config = Configuration(plistPath: plistPath) {
+            return config
+        }
+        return nil
+    }()
     
     func getVenuesForCoordinate(_ coordinate:CLLocationCoordinate2D,
                                 completionHandler: @escaping ([FourSquareVenue]) -> Void ) {
+        
+        let fourSquareClientSecret = config?.get(.fourSquareClientSecret) ?? ""
+        let fourSquareAPIVersion   = config?.get(.fourSquareAPIVersion) ?? ""
+        let fourSquareClientID     = config?.get(.fourSquareClientID) ?? ""
+
         var venuesFC = [FourSquareVenue]()
         
         let latitude = String(coordinate.latitude)
         let longitude = String(coordinate.longitude)
         let parameters: Parameters = ["ll": "\(latitude),\(longitude)",
-            "client_id": CLIENT_ID,
-            "client_secret": CLIENT_SECRET,
-            "v": API_VERSION]
+            "client_id": fourSquareClientID,
+            "client_secret": fourSquareClientSecret,
+            "v": fourSquareAPIVersion]
         
         Alamofire.request(API_SEARCH_URL,
                           method: .get,
@@ -49,4 +59,6 @@ class FourSquareServiceManager {
                 completionHandler(venuesFC)
         }
     }
+    
+    
 }
