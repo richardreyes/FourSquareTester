@@ -1,0 +1,6 @@
+framework module SwiftyConfiguration {
+  umbrella header "SwiftyConfiguration-umbrella.h"
+
+  export *
+  module * { export * }
+}
